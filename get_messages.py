@@ -41,9 +41,10 @@ for i in range(1,count_of_messages):
     time.sleep(1)
     el.click()
     time.sleep(0.5)
+    endToScroll = browser.execute_script("return window.innerHeight")
     while True:
         pageHeight = browser.execute_script("return window.pageYOffset+window.innerHeight")
-        if pageHeight<=710 and pageHeight>=654:
+        if pageHeight<=endToScroll:
             print("break")
             break
         else:
