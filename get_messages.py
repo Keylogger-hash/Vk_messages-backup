@@ -13,12 +13,14 @@ TELEPHONE = str(input("Enter login or telephone number for vk:"))
 PASSWORD = str(input("Enter password for vk:"))
 COUNT_OF_MESSAGES = str(input("How many messages do you need to download:"))
 TIME_FOR_CAPTCHA = str(input("Enter time for solving captcha(in seconds):"))
+PATH_TO_CHROMEDRIVER = str(input("Enter a path to chromedriver(%PATH%/chromedriver.exe):"))
 
 telephone= f"{TELEPHONE}"
 password = f"{PASSWORD}"
 count_of_messages = int(COUNT_OF_MESSAGES)
 
-browser = webdriver.Chrome("chromedriver.exe")
+
+browser = webdriver.Chrome(PATH_TO_CHROMEDRIVER)
 browser.get("https://vk.com")
 browser.maximize_window()
 cookies = browser.get_cookies()
